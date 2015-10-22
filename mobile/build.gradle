@@ -1,4 +1,19 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
 
 android {
     compileSdkVersion 22
@@ -24,4 +39,12 @@ dependencies {
     wearApp project(':wear')
     compile 'com.android.support:appcompat-v7:22.2.1'
     compile 'com.google.android.gms:play-services:7.5.0'
+
+    // add the following line, and replace "0.8.8" with the latest version
+    // of Estimote Android SDK; you'll find the latest version number on:
+    //   https://github.com/Estimote/Android-SDK/releases
+    compile 'com.estimote:sdk:0.8.8@aar'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.2@aar') {
+        transitive = true;
+    }
 }

@@ -16,7 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="ecedb23d1dde3c9272d67303ac3866d1ca81d4ae" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <!-- required to scan for and connect to Estimote Beacons via Bluetooth -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+
+    <!-- required to access Estimote Cloud -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 </manifest>
